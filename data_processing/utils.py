@@ -1,0 +1,192 @@
+"""Constant and regex definition."""
+
+import string
+import regex
+
+# Arabic isolated word
+HAMZA = '\u0621'
+ALEF_MADDA = '\u0622'
+ALEF_HAMZA_ABOVE = '\u0623'
+WAW_HAMZA = '\u0624'
+ALEF_HAMZA_BELOW = '\u0625'
+YEH_HAMZA = '\u0626'
+ALEF = '\u0627'
+BEH = '\u0628'
+TEH_MARBUTA = '\u0629'
+TEH = '\u062a'
+THEH = '\u062b'
+JEEM = '\u062c'
+HAH = '\u062d'
+KHAH = '\u062e'
+DAL = '\u062f'
+THAL = '\u0630'
+REH = '\u0631'
+ZAIN = '\u0632'
+SEEN = '\u0633'
+SHEEN = '\u0634'
+SAD = '\u0635'
+DAD = '\u0636'
+TAH = '\u0637'
+ZAH = '\u0638'
+AIN = '\u0639'
+GHAIN = '\u063a'
+TATWEEL = '\u0640'
+FEH = '\u0641'
+QAF = '\u0642'
+KAF = '\u0643'
+LAM = '\u0644'
+MEEM = '\u0645'
+NOON = '\u0646'
+HEH = '\u0647'
+WAW = '\u0648'
+ALEF_MAKSURA = '\u0649'
+YEH = '\u064a'
+MADDA_ABOVE = '\u0653'
+HAMZA_ABOVE = '\u0654'
+HAMZA_BELOW = '\u0655'
+MINI_ALEF = '\u0670'
+ALEF_WASLA = '\u0671'
+
+# Diacritics
+FATHATAN = '\u064b'
+DAMMATAN = '\u064c'
+KASRATAN = '\u064d'
+FATHA = '\u064e'
+DAMMA = '\u064f'
+KASRA = '\u0650'
+SHADDA = '\u0651'
+SUKUN = '\u0652'
+
+# Arabic Punctuation
+COMMA = '\u060c'
+SEMICOLON = '\u061b'
+QUESTION = '\u061f'
+FULL_STOP = '\u06d4'
+FIVE_POINTED_STAR = '\u066d'
+
+OTHER_PUNCTUATIONS = list(string.punctuation)
+
+# digit separators
+ARABIC_PERCENT_SIGN = '\u066a'
+ARABIC_DECIMAL_SEPARATOR = '\u066b'
+ARABIC_THOUSANDS_SEPARATOR = '\u066c'
+ARABIC_DATE_SEPARATOR = '\u060d'
+
+# Eastern Arabic digits
+EA_ZERO = '\u0660'
+EA_ONE = '\u0661'
+EA_TWO = '\u0662'
+EA_THREE = '\u0663'
+EA_FOUR = '\u0664'
+EA_FIVE = '\u0665'
+EA_SIX = '\u0666'
+EA_SEVEN = '\u0667'
+EA_EIGHT = '\u0668'
+EA_NINE = '\u0669'
+
+# Western Arabic Letters
+WA_ZERO = '\u0030'
+WA_ONE = '\u0031'
+WA_TWO = '\u0032'
+WA_THREE = '\u0033'
+WA_FOUR = '\u0034'
+WA_FIVE = '\u0035'
+WA_SIX = '\u0036'
+WA_SEVEN = '\u0037'
+WA_EIGHT = '\u0038'
+WA_NINE = '\u0039'
+
+# other non valid characters
+# Remove special
+#text = text.replace('\u0640', '')
+#text = text.replace('\uf343', '')
+
+# Arabic Letter Alef Wasla Unicode Character
+ALAW = '\u0671'
+# ENGLISH DASH
+EN_DASH = '\u2013'
+# Kashida/Tatwil
+KASHIDA = '\u0640'
+# ZERO WIDTH JOINER
+ZWJ = '\u200d'
+# RIGHT SINGLE QUOTATION MARK
+RSQM = '\u2019'
+# LEFT SINGLE QUOTATION MARK
+LSQM = '\u2018'
+# RIGHT-TO-LEFT MARK
+RTLM = '\u200f'
+# ARABIC LETTER SUPERSCRIPT ALEF
+ALSA = '\u0670'
+# ORNATE LEFT PARENTHESIS
+OLP = '\ufd3e'
+# ORNATE RIGHT PARENTHESIS
+ORP = '\ufd3f'
+# HORIZONTAL ELLIPSIS
+HE = '\u2026'
+# BULLET
+BULLET = '\u2022'
+# LEFT DOUBLE QUOTATION MARK
+LDQM = '\u201c'
+# RIGHT DOUBLE QUOTATION MARK
+RDQM = '\u201d'
+# RABIC SMALL HIGH MEEM INITIAL FORM
+ASHMIF = '\u06d8'
+# ARABIC LETTER FARSI YEH
+ALFY = '\u06cc'
+# RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
+RPDAQM = '\u00bb'
+# LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
+LPDAQM = '\u00ab'
+#ACUTE ACCENT
+AA = '\u00b4'
+# REVERSE SOLIDUS
+RS = '\u005c'
+
+
+ARABIC_LETTERS = [ALEF, BEH, TEH, TEH_MARBUTA, THEH, JEEM, HAH, KHAH, \
+          DAL, THAL, REH, ZAIN, SEEN, SHEEN, SAD, DAD, TAH, ZAH, \
+          AIN, GHAIN, FEH, QAF, KAF, LAM, MEEM, NOON, HEH, WAW, \
+          ALEF_MAKSURA, YEH, HAMZA, ALEF_MADDA, ALEF_HAMZA_ABOVE,\
+          WAW_HAMZA, ALEF_HAMZA_BELOW, YEH_HAMZA]
+
+DIACRITICS = [FATHATAN, DAMMATAN, KASRATAN, FATHA, DAMMA, KASRA, SUKUN, SHADDA]
+
+ARABIC_PUNC = [COMMA, SEMICOLON, QUESTION, FULL_STOP]
+
+EA_DIGITS = [EA_ZERO, EA_ONE, EA_TWO, EA_THREE, EA_FOUR, EA_FIVE, \
+             EA_SIX, EA_SEVEN, EA_EIGHT, EA_NINE]
+WA_DIGITS = [WA_ZERO, WA_ONE, WA_TWO, WA_THREE, WA_FOUR, WA_FIVE, \
+             WA_SIX, WA_SEVEN, WA_EIGHT, WA_NINE]
+
+DIGIT_SEPARATORS = [ARABIC_PERCENT_SIGN, ARABIC_DECIMAL_SEPARATOR, \
+                    ARABIC_THOUSANDS_SEPARATOR, ARABIC_DATE_SEPARATOR]
+
+NON_VALID_CHARACTERS = [ALAW, EN_DASH, KASHIDA, ZWJ, RSQM, LSQM, RTLM, ALSA, OLP, ORP, \
+                        HE, BULLET, LDQM, RDQM, ASHMIF, ALFY, RPDAQM, LPDAQM, RS, AA]
+
+
+DIACRITIC_PATTERN = regex.compile(
+    u"["+u''.join(DIACRITICS)+u"]", regex.UNICODE
+)
+
+DIGIT_PATTERN = regex.compile(
+    u"["+u''.join(EA_DIGITS + WA_DIGITS + DIGIT_SEPARATORS)+u"]", regex.UNICODE
+)
+
+ARABIC_LETTER_PATTERN = regex.compile(
+    u"["+u''.join(ARABIC_LETTERS)+u"]", regex.UNICODE
+)
+
+ARABIC_PUNC_PATTERN = regex.compile(
+    u"["+u''.join(ARABIC_PUNC)+u"]", regex.UNICODE
+)
+
+PUNCTUATIONS_PATTERN = regex.compile(
+    u"["+u''.join(OTHER_PUNCTUATIONS + ARABIC_PUNC)+u"]", regex.UNICODE
+)
+
+NON_VALID_CHARACTERS_PATTERN = regex.compile(
+    u"["+u''.join(NON_VALID_CHARACTERS)+u"]", regex.UNICODE
+)
+
+SEQUENCE_LENGTH = 50

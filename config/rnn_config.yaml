@@ -1,0 +1,57 @@
+common:
+  exp_folder: 'C:/Users/Mohammed/my_work/pytorch/experiments/tashkeel/just_for_test/'
+  use_cuda: True
+  phases: [train, valid]
+  num_workers: 1
+  nepochs: 20
+  seed: 3535
+
+datasets:
+  train: 'C:/Users/Mohammed/my_work/data/tashkeel/aliosm/processed/extended_valid.csv'
+  valid: 'C:/Users/Mohammed/my_work/data/tashkeel/aliosm/processed/extended_valid.csv'
+  test: 'C:/Users/Mohammed/my_work/data/tashkeel/aliosm/processed/test.csv'
+  char_vocab: 'C:/Users/Mohammed/my_work/data/tashkeel/aliosm/processed/char_vocab.txt'
+  diac_vocab: 'C:/Users/Mohammed/my_work/data/tashkeel/aliosm/processed/diac_vocab.txt'
+  partial_prob: 0. # for the partially diacritized data
+  shuffle_train: True
+  batch_size: 64
+
+model:
+  model_type: RNN
+  model_name: basic_lstm
+  task_name: training
+  model_folder: ${common.exp_folder}/checkpoints
+  from_pretrained: !!null
+  model_config:
+    embedding_name: !!null
+    embedding_size: 512
+    input_size: 512
+    hidden_size: 256
+    n_layers: 2
+    rnn_type: lstm
+    bidirectional: True
+    batch_norm: True
+    activation_function: relu
+    dropout: 0.1
+
+  criterion:
+    name: NLLLoss
+    options: {
+      ignore_index: -1
+    }
+
+  learning_rate: 0.001
+  optimizer:
+    name: Adam
+    options: {
+      weight_decay: 0.
+    }
+    
+  scheduler:
+    name: ReduceLROnPlateau
+    options: {
+      patience: 2,
+      factor: 0.5,
+      mode: min,
+      verbose: True
+    }
