@@ -37,3 +37,14 @@ The best model was selected based on the DER (Diacritic Error Rate) computed on 
 Results show that combining character and diacritic embeddings slightly improves the performance when the input text is not diacritized. However the performance can improve significantly when the
 input text is partially diacritized.
 
+## Gradio App
+
+A gradio prototype using a LSTM model is developed. The app is hosted in HuggingFace space.
+It can be accessed through this link [arabic\_diacritizer](https://huggingface.co/spaces/benmfb/arabic_diacritizer).
+
+The application has the Following characteristics:
+1. The app accepts any kind of text without any constraint.
+2. It keeps non Arabic text as it is.
+3. It supports partially diacritized text, it keeps the diacritized text as it is and adds diacritics to the remaining text.
+4. The user can enter a text (manually or copy/past) or upload a text file.
+5. The app allowed copy-pasting the diacritized text to be saved in a file.
