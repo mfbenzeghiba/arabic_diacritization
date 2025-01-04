@@ -45,6 +45,6 @@ It can be accessed through this link [arabic\_diacritizer](https://huggingface.c
 The application has the Following characteristics:
 1. The app accepts any kind of text without any constraint.
 2. It keeps non Arabic text as it is.
-3. It supports partially diacritized text, it keeps the diacritized text as it is and adds diacritics to the remaining text.
+3. It supports partially diacritized text, it keeps the diacritized text as it is and adds diacritics to the remaining Arabic text.
 4. The user can enter a text (manually or copy/past) or upload a text file.
 5. The app allowed copy-pasting the diacritized text to be saved in a file.
