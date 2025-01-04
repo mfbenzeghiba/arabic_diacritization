@@ -44,7 +44,7 @@ class SumEmbedding(nn.Module):
 
         token_embeddings = self.token_embedding(token_inputs)
         diac_embeddings = self.diac_embedding(diac_inputs)
-
+    
         return token_embeddings + diac_embeddings
 
 
@@ -68,5 +68,5 @@ class ConcatinateEmbedding(nn.Module):
         """
         token_embeddings = self.token_embedding(token_inputs)
         diac_embeddings = self.diac_embedding(diac_inputs)
-
+        
         return torch.cat((token_embeddings, diac_embeddings), dim=-1)

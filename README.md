@@ -21,3 +21,28 @@ consists mainly in
 3. Split long sentences.
 4. Keep text with high diacritic-to-character ratio rate.
 
+## Training
+
+Training is performed with the .\train_and_eval\train_diacritizer.py script.It takes as argument a YAML config file
+that set the data location, model architecture and training hyper-parameters and criterion.
+
+The implementation compares two versions of LSTM models:
+1. Baseline model that does not support partially diacritized text as input.
+2. Models that do (inspired from the work described in https://arxiv.org/abs/2306.03557)
+These models first combine character embeddings and diacritics embeddiungs before feeding them to the RNN model.
+Both the sum and the concatenation embeddings rules are implemented.
+
+To train the model with partially diacritized text, a simple technique is used. it consists in the Following steps:
+1. For each input sample (a fully diacritized text), a partial probability ((partial_prob (see config file))
+is used to decide weither to use partially diacritized text.
+2. If so, then a masking probability is randomly chosen to set the percentage of diacritics to be masked (removed)
+from the sample.
+3. if not, then all diacritics are removed from the sample.
+
+The best model was selected based on the DER (Diacritic Error Rate) computed on the validation set
+with fully non diacritized text.
+
+Results show that adding diacritics embeddings slightly improves the performance when the input
+text is not diacritized. However the performance can improve significantly when the
+input text is partially diacritized.
+
