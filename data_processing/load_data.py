@@ -237,9 +237,9 @@ if __name__ == "__main__":
 
     random.seed(10)
 
-    TEXT_FILE = r'C:/Users/Mohammed/my_work/data/tashkeel/aliosm/processed/extended_valid.csv'
-    CHAR_VOCAB = r'C:/Users/Mohammed/my_work/data/tashkeel/aliosm/processed/char_vocab.txt'
-    DIAC_VOCAB = r'C:/Users/Mohammed/my_work/data/tashkeel/aliosm/processed/diac_vocab.txt'
+    CSV_FILE = r'path_to_text_file/valid.csv'
+    CHAR_VOCAB = r'path_to_character_vocab/char_vocab.txt'
+    DIAC_VOCAB = r'path_to_diacritic_vocab/diac_vocab.txt'
     PARTIAL_PROB = 0.5
 
     ttokenizer = Tokenizer(CHAR_VOCAB)

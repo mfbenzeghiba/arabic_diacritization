@@ -1,5 +1,5 @@
 common:
-  exp_folder: 'C:/Users/Mohammed/my_work/pytorch/experiments/tashkeel/just_for_test/'
+  exp_folder: 'path_to_exp_dir'
   use_cuda: True
   phases: [train, valid]
   num_workers: 1
@@ -7,11 +7,11 @@ common:
   seed: 3535
 
 datasets:
-  train: 'C:/Users/Mohammed/my_work/data/tashkeel/aliosm/processed/extended_valid.csv'
-  valid: 'C:/Users/Mohammed/my_work/data/tashkeel/aliosm/processed/extended_valid.csv'
-  test: 'C:/Users/Mohammed/my_work/data/tashkeel/aliosm/processed/test.csv'
-  char_vocab: 'C:/Users/Mohammed/my_work/data/tashkeel/aliosm/processed/char_vocab.txt'
-  diac_vocab: 'C:/Users/Mohammed/my_work/data/tashkeel/aliosm/processed/diac_vocab.txt'
+  train: 'path_to_train_data/train.csv'
+  valid: 'path_to_valid_data/valid.csv'
+  test: 'path_to_test_data/test.csv'
+  char_vocab: 'path_to_character_vocab/char_vocab.txt'
+  diac_vocab: 'path_to_diacritic_vocab/diac_vocab.txt'
   partial_prob: 0. # probability to apply partial diacritization
   shuffle_train: True
   batch_size: 64
