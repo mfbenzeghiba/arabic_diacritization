@@ -55,6 +55,11 @@ class BaseModel(ABC):
         self._model, self.epoch, self.best_der, self.learn_rate = create_model(self.cfg)
         self.best_epoch = self.epoch
         self._model.to(self.device)
+        
+        self.set_optimizer()
+        self.set_learning_rate()
+        self.set_scheduler()
+        self.set_criterion()
 
     @property
     def parameters(self):

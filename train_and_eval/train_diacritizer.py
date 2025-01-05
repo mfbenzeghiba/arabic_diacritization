@@ -88,11 +88,6 @@ def main(cfg_path: str, options: dict):
     logging.info('Device: %s', device)
     logging.info("-" * 50)
 
-    model.set_learning_rate()
-    model.set_criterion()
-    model.set_optimizer()
-    model.set_scheduler()
-
     model_folder = model_options.model_folder
     model_folder = os.path.join(exp_folder, model_folder)
     if not os.path.exists(model_folder):
