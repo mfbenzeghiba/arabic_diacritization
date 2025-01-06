@@ -321,7 +321,6 @@ class BaseModel(ABC):
             epoch (integer): Epoch number.
             epoch_loss: (float): The epoch loss.
             epoch_der (Counter): Edition Errors rate on the validation dataset.
-            if_best_only (bool): save the model only if it is better than the previous one.
         """
 
         model_cfg = OmegaConf.create(OmegaConf.to_yaml(self.cfg.model_config, resolve=True))
