@@ -5,6 +5,7 @@ The implementation also, supports partially diacritized text, an arabic text tha
 some words or characters that are already diacritized.
 Currently, three variants of RNN-based architectures are supported. These are vanilla RNN, LSTM and GRU.
 Other types of architectures will be added (e.g, Transformer).
+An LSTM-based gradio app is also developed [click here](https://huggingface.co/spaces/benmfb/arabic_diacritizer).
 
 ## Dataset
 
