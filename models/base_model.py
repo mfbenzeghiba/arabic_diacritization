@@ -162,7 +162,7 @@ class BaseModel(ABC):
             scheduler (Optimizer, optional): _description_. Defaults to 'ReduceLROnPlateau'.
         """
 
-        self._schedeler = value
+        self._scheduler = value
 
     def set_scheduler(self) -> None:
         """Set the scheduler."""
