@@ -19,10 +19,6 @@ sys.path.append(str(path_root))
 from data_processing.load_data import Tokenizer, Diacritizer
 from tools.model_utils import load_checkpoint
 
-
-CHAR_VOCAB = r'C:/Users/Mohammed/my_work/data/tashkeel/aliosm/processed/char_vocab.txt'
-DIAC_VOCAB = r'C:/Users/Mohammed/my_work/data/tashkeel/aliosm/processed/diac_vocab.txt'
-
 def parse_args() ->  argparse.Namespace:
     """Parse the arguments."""
     parser = argparse.ArgumentParser(description='script to train attention models.')
